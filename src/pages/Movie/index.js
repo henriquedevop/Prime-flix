@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { json, useParams } from "react-router-dom";
+import "./movie-info.css"
 import api from "../../services/api"
 
 function Movie() {
@@ -8,6 +8,7 @@ function Movie() {
     const { id } = useParams();
     const [ movie, setMovie ] = useState({})
     const [ loading, setLoading ] = useState(true)
+    const [ findMovie, setFindMovie] = useState(false)
 
     useEffect(() => {
         async function getMovie() {
@@ -22,8 +23,7 @@ function Movie() {
                 setMovie(response.data);
                 setLoading(false);
             } catch (error) {
-                console.log("Filme não encontrado");
-                setLoading(false);
+                setFindMovie(true)
             }
         }
 
@@ -33,6 +33,32 @@ function Movie() {
             console.log('Componente desmontado');
         };
     }, [id]);
+
+    function saveMovie() {
+        const moviesLocalStorage = localStorage.getItem("@henriqueflix")
+
+        let listSaveMovies = JSON.parse(moviesLocalStorage) || []
+
+        const hasMovie = listSaveMovies.some((saveMovie) => saveMovie.id === movie.id)
+
+        if(hasMovie) {
+            alert("filme ja ta na lista")
+            return
+        }
+
+        listSaveMovies.push(movie)
+        localStorage.setItem("@henriqueflix", JSON.stringify(listSaveMovies))
+        alert("salvo")
+
+    }
+
+    if(findMovie) {
+        return(
+            <div className="movie-info">
+                <h2>Filme nao encontrado</h2>
+            </div>
+        )
+    }
 
     if(loading) {
         return(
@@ -49,6 +75,13 @@ function Movie() {
             <h3>Sinopse</h3>
             <span>{movie.overview}</span>
             <strong>Avaliação: {movie.vote_average} / 10</strong>
+        
+            <div className="buttons-area">
+                <button onClick={saveMovie}>Salvar</button>
+                <button>
+                    <a target="blank" rel="external" href={`https://www.youtube.com/results?search_query=${movie.title} Trailer`}>Trailer</a>
+                </button>
+            </div>
         </div>
     )
 }
