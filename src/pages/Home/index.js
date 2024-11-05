@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
+import Search from "../../components/Search";
 import './home.css'
 
 //https://api.themoviedb.org/3/movie/now_playing?api_key=f1218bbba2ce7ad9688ef79714582bab&language=pt-BR
@@ -9,26 +10,28 @@ function Home() {
 
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true)
+    const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
-        
         async function loadMovies() {
-            const response = await api.get("movie/now_playing", {
-                params:{
-                    api_key: "f1218bbba2ce7ad9688ef79714582bab",
-                    language: "pt-BR",
-                    page: 1,
-                }
-            })
+            try {
+                const response = await api.get("movie/now_playing", {
+                    params: {
+                        api_key: "f1218bbba2ce7ad9688ef79714582bab",
+                        language: "pt-BR",
+                        page: 1,
+                    }
+                });
 
-            setMovies(response.data.results.slice(0,10))
-
+                setMovies(response.data.results.slice(0, 10));
+                setLoading(false);
+            } catch (error) {
+                console.log("Erro ao carregar filmes:", error);
+            }
         }
 
-        setLoading(false)
         loadMovies();
-
-    }, [])
+    }, []);
 
     if(loading) {
         return(
@@ -40,6 +43,7 @@ function Home() {
 
     return(
         <main className="container">
+            <Search/>
             <div className="movies-list">
                 {movies.map((movie) => {
                     return(
