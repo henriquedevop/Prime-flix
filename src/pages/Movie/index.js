@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { json, useParams } from "react-router-dom";
 import "./movie-info.css"
+import { toast } from "react-toastify";
 import api from "../../services/api"
 
 function Movie() {
@@ -42,13 +43,13 @@ function Movie() {
         const hasMovie = listSaveMovies.some((saveMovie) => saveMovie.id === movie.id)
 
         if(hasMovie) {
-            alert("filme ja ta na lista")
+            toast.warn("Esse filme já está na lista!")
             return
         }
 
         listSaveMovies.push(movie)
         localStorage.setItem("@henriqueflix", JSON.stringify(listSaveMovies))
-        alert("salvo")
+        toast.success("Filme adicionado na lista!")
 
     }
 
