@@ -1,0 +1,38 @@
+.userListMovies {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userListMovies h1{
+    margin-bottom: 14px;
+}
+
+.userListMovies span{
+    font-size: 18px
+}
+
+.userListMovies ul {
+    width: 720px;
+}
+
+.userListMovies ul li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.userListMovies div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userListMovies div a {
+    text-decoration: none;
+    color: #116feb;
+    margin-right: 14px;
+}
