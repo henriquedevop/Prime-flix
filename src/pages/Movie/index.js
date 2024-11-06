@@ -18,6 +18,7 @@ function Movie() {
                     params: {
                         api_key: "f1218bbba2ce7ad9688ef79714582bab",
                         language: "pt-BR",
+                        include_adult: false,
                     }
                 });
                 console.log(response.data);

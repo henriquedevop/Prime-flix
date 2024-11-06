@@ -1,0 +1,25 @@
+.form-search {
+    display: flex;
+    align-items: center;
+}
+
+.form-search input {
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: .5rem;
+}
+
+.form-search button {
+    background: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-left: 5px;
+    padding: .5rem;
+}
+
+.form-search a {
+    color: white;
+    padding: .5rem;
+}

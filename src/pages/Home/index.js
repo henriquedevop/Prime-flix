@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import Search from "../../components/Search";
 import './home.css'
 
 //https://api.themoviedb.org/3/movie/now_playing?api_key=f1218bbba2ce7ad9688ef79714582bab&language=pt-BR
@@ -10,7 +9,6 @@ function Home() {
 
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true)
-    const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
         async function loadMovies() {
@@ -19,11 +17,14 @@ function Home() {
                     params: {
                         api_key: "f1218bbba2ce7ad9688ef79714582bab",
                         language: "pt-BR",
+                        include_adult: false,
                         page: 1,
                     }
                 });
 
                 setMovies(response.data.results.slice(0, 10));
+                console.log(response.data.results);
+                
                 setLoading(false);
             } catch (error) {
                 console.log("Erro ao carregar filmes:", error);
@@ -43,7 +44,14 @@ function Home() {
 
     return(
         <main className="container">
-            <Search/>
+            <div className="container-week">
+            <img className="week-poster" src={`https://image.tmdb.org/t/p/original/${movies[6].backdrop_path}`} alt={movies[6].title}/>
+            <h2 className="week-title">{movies[6].title}</h2>
+            <h2 className="week-vote"> Nota: {movies[6].vote_average} / 10</h2>
+            <span className="week-desc">{movies[6].overview}</span>
+            <a className="week-trailer" target="blank" rel="external" href={`https://www.youtube.com/results?search_query=${movies[6].title} Trailer`}> <i class="bi bi-play-fill"></i> Trailer</a>
+            <Link className="week-details" to={`/filme/${movies[6].id}`}> <i class="bi bi-info-circle"></i> Ver detalhes</Link>
+            </div>
             <div className="movies-list">
                 {movies.map((movie) => {
                     return(

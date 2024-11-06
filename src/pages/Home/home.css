@@ -48,3 +48,58 @@
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+.container-week {
+    position: relative;
+    z-index: 1;
+}
+
+.week-poster {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.week-title {
+    color: #fff;
+    position: absolute;
+    top: 40%;
+    font-size: 4rem;
+    left: 2%;
+}
+
+.week-vote {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    left: 2%;
+    font-weight: 500;
+}
+
+.week-desc {
+    color: #fff;
+    position: absolute;
+    top: 55%;
+    font-size: 1rem;
+    left: 2%;
+    font-weight: 400;
+    width: 30%;
+}
+
+.week-trailer, .week-details {
+    color: #fff;
+    position: absolute;
+    top: 65%;
+    font-size: 1.3rem;
+    left: 2%;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #d62828;
+    border-radius: 8px;
+    padding: 0.7rem;
+}
+
+.week-details {
+    left: 10%;
+    background-color: #adb5bd;
+}

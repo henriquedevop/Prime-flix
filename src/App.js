@@ -2,6 +2,7 @@ import RoutesApp from "./routes";
 import { ToastContainer } from "react-toastify";
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (
