@@ -1,12 +1,13 @@
 .userListMovies {
-    margin-top: 24px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: calc(100vh - 9.67rem);
 }
 
 .userListMovies h1{
-    margin-bottom: 14px;
+    margin-bottom: 2rem;
 }
 
 .userListMovies span{
@@ -32,7 +33,22 @@
 }
 
 .userListMovies div a {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
     text-decoration: none;
-    color: #116feb;
-    margin-right: 14px;
+    background-color: #d62828;
+    border-radius: 8px;
+    padding: 0.7rem;
+}
+
+.btn-remove {
+    font-weight: 700;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #adb5bd;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 1rem;
 }

@@ -9,6 +9,7 @@ function Home() {
 
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true)
+    const weekMovie = 4
 
     useEffect(() => {
         async function loadMovies() {
@@ -22,7 +23,7 @@ function Home() {
                     }
                 });
 
-                setMovies(response.data.results.slice(0, 10));
+                setMovies(response.data.results.slice(0, 20));
                 console.log(response.data.results);
                 
                 setLoading(false);
@@ -43,22 +44,23 @@ function Home() {
     }
 
     return(
-        <main className="container">
+        <main className="container">      
             <div className="container-week">
-            <img className="week-poster" src={`https://image.tmdb.org/t/p/original/${movies[6].backdrop_path}`} alt={movies[6].title}/>
-            <h2 className="week-title">{movies[6].title}</h2>
-            <h2 className="week-vote"> Nota: {movies[6].vote_average} / 10</h2>
-            <span className="week-desc">{movies[6].overview}</span>
-            <a className="week-trailer" target="blank" rel="external" href={`https://www.youtube.com/results?search_query=${movies[6].title} Trailer`}> <i class="bi bi-play-fill"></i> Trailer</a>
-            <Link className="week-details" to={`/filme/${movies[6].id}`}> <i class="bi bi-info-circle"></i> Ver detalhes</Link>
+            <img className="week-poster" src={`https://image.tmdb.org/t/p/original/${movies[weekMovie].backdrop_path}`} alt={movies[weekMovie].title}/>
+            <h2 className="week-title">{movies[weekMovie].title}</h2>
+            <h2 className="week-vote"> Nota: {movies[weekMovie].vote_average.toFixed(1)} / 10</h2>
+            <span className="week-desc">{movies[weekMovie].overview}</span>
+            <a className="week-trailer" target="blank" rel="external" href={`https://www.youtube.com/results?search_query=${movies[weekMovie].title} Trailer`}> <i class="bi bi-play-fill"></i> Trailer</a>
+            <Link className="week-details" to={`/filme/${movies[weekMovie].id}`}> <i class="bi bi-info-circle"></i> Ver detalhes</Link>
             </div>
+            <h3 className="last-movies">Ultimos lançamentos</h3>
             <div className="movies-list">
                 {movies.map((movie) => {
                     return(
-                        <article key={movie.id}>
-                            <strong>{movie.title}</strong>
+                        <article className="movie-body" key={movie.id}>
                             <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>
-                            <Link to={`/filme/${movie.id}`}>Acessar</Link>
+                            <strong>{movie.title}</strong>
+                            <Link className="movie-detalis" to={`/filme/${movie.id}`}>Acessar</Link>
                         </article>
                     )
                 })}

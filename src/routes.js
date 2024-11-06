@@ -5,6 +5,7 @@ import Movie from "./pages/Movie";
 import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
 import Search from "./pages/Search";
+import Footer from "./components/Footer";
 import Error from "./pages/Error"
 
 function RoutesApp() {
@@ -19,6 +20,7 @@ function RoutesApp() {
 
                 <Route path="*" element={ <Error/>}/>
             </Routes>
+            <Footer/>
         </BrowserRouter>
     )
 }
