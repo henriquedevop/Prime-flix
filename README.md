@@ -1,6 +1,6 @@
 # Henrique Flix 🎬
 
-![preview do projeto](../henrique-flix/src/images/preview-henriqueflix.png)
+![preview do projeto](/src/images/preview-henriqueflix.png)
 
 ## Sobre o Projeto
 Henrique Flix é um projeto de estudo com catálogo de filmes que permite aos usuários pesquisar filmes, ver os detalhes, e salvar os favoritos para uma lista que guarda os dados.
