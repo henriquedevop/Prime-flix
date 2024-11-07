@@ -30,7 +30,14 @@
 
 .movies-list img {
     width: 270px;
-    min-height: 405px;   
+    min-height: 405px;
+    border-radius: 8px;
+    transition: 0.5s;   
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movies-list img:hover {
+    transform: scale(1.05); 
 }
 
 .movie-body strong {
@@ -48,11 +55,22 @@
     align-items: center;
     justify-content: center;
     padding: .5rem;
+    transition: 0.5s;
+}
+
+.movie-detalis:hover {
+    background-color: #F23C3C;
 }
 
 .container-week {
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 480px) {
+    .container-week {
+        margin-top: 7.55rem;
+    }
 }
 
 .week-poster {
@@ -98,11 +116,20 @@
     background-color: #d62828;
     border-radius: 8px;
     padding: 0.7rem;
+    transition: 0.5s;
+}
+
+.week-trailer:hover {
+    background-color: #F12F2F;
 }
 
 .week-details {
     left: 10%;
     background-color: #adb5bd;
+}
+
+.week-details:hover {
+    background-color: #919CA6;
 }
 
 @media (max-width: 1440px) {

@@ -1,6 +1,6 @@
 # Henrique Flix 🎬
 
-![preview do projeto](../henrique-flix/src/images/preview-henriqueflix.png)
+![preview do projeto](/src/images/preview-henriqueflix.png)
 
 ## Sobre o Projeto
 Henrique Flix é um projeto de estudo com catálogo de filmes que permite aos usuários pesquisar filmes, ver os detalhes, e salvar os favoritos para uma lista que guarda os dados.
@@ -23,15 +23,15 @@ Henrique Flix é um projeto de estudo com catálogo de filmes que permite aos us
    ```bash
    git clone https://github.com/henriquedevop/henrique-flix.git
    ```
-1. Clone o repositório:
+1. Navegue até o diretório do projeto:
    ```bash
    cd henrique-flix
    ```
-3. Clone o repositório:
+3. Instale as dependências:
    ```bash
    npm install
    ```
-4. Clone o repositório:
+4. Inicie o projeto:
    ```bash
    npm start
    ```

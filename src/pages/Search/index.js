@@ -1,6 +1,7 @@
 import api from "../../services/api";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./search.css"
 
 function Search() {
 
@@ -40,8 +41,8 @@ function Search() {
                 {searchResults.map((movie) => {
                     return(
                         <article className="movie-body" key={movie.id}>
-                            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>
-                            <strong>{movie.title}</strong>
+                            <Link to={`/filme/${movie.id}`}><img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/></Link>
+                            <strong className="movie-title">{movie.title}</strong>
                             <Link className="movie-detalis" to={`/filme/${movie.id}`}>Acessar</Link>
                         </article>
                     )

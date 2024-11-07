@@ -1,3 +1,23 @@
 .search-result {
-    margin: 5rem;
+    margin-top: 5rem;
+}
+
+@media (max-width: 480px) {
+    .search-result {
+        margin-top: 10rem;
+        font-size: 1.5rem;
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .movie-title {
+        max-width: 12ch;
+    }
+}
+
+@media (max-width: 700px) {
+    .movie-title {
+        max-width: 12ch;
+    }
 }
