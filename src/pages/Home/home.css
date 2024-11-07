@@ -7,6 +7,7 @@
 }
 
 .movies-list {
+    margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     display: flex;
@@ -46,7 +47,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     padding: .5rem;
 }
 
@@ -103,4 +103,87 @@
 .week-details {
     left: 10%;
     background-color: #adb5bd;
+}
+
+@media (max-width: 1440px) {
+    .week-title {
+        font-size: 3rem;
+    }
+
+    .week-desc {
+        font-size: .7rem;
+    }
+
+    .week-details {
+        left: 15%;
+    }
+
+    .week-trailer, .week-details {
+        top: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .week-desc {
+        display: none;
+    }
+
+    .week-title {
+        font-size: 1.5rem;
+    }
+
+    .week-vote {
+        font-size: 0.9rem;
+    }
+
+    .week-trailer, .week-details {
+        top: 60%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .week-trailer, .week-details {
+        font-size: .8rem;
+    }
+
+    .movies-list img {
+        width: 220px;
+    min-height: 205px;  
+    }
+}
+
+@media (max-width: 570px) {
+    .week-trailer, .week-details {
+        font-size: .6rem;
+    }
+
+    .movies-list img {
+        width: 150px;
+    min-height: 205px;  
+    }
+}
+
+@media (max-width: 430px) {
+    .week-trailer, .week-details {
+        font-size: .7rem;
+        padding: .3rem;
+    }
+
+    .week-vote {
+        display: none;
+    }
+
+    .week-details {
+        left: 20%;
+    }
+
+    .movies-list img {
+        width: 100px;
+    min-height: 155px;  
+    }
+
+    .movies-list strong {
+        font-size: 0.7rem;
+    }
 }

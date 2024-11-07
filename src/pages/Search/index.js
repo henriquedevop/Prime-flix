@@ -35,14 +35,14 @@ function Search() {
 
     return(
         <div>
-            <h1>{`${searchResults.length}: resultados para ${search}`}</h1>
-            <div>
+            <h1 className="search-result">{`${searchResults.length}: resultados para ${search}`}</h1>
+            <div className="movies-list">
                 {searchResults.map((movie) => {
-                    return (
-                        <article key={movie.id}>
-                            <strong>{movie.title}</strong>
+                    return(
+                        <article className="movie-body" key={movie.id}>
                             <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>
-                            <Link to={`/filme/${movie.id}`}>Acessar</Link>
+                            <strong>{movie.title}</strong>
+                            <Link className="movie-detalis" to={`/filme/${movie.id}`}>Acessar</Link>
                         </article>
                     )
                 })}

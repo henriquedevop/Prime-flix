@@ -53,7 +53,6 @@ function Home() {
             <a className="week-trailer" target="blank" rel="external" href={`https://www.youtube.com/results?search_query=${movies[weekMovie].title} Trailer`}> <i class="bi bi-play-fill"></i> Trailer</a>
             <Link className="week-details" to={`/filme/${movies[weekMovie].id}`}> <i class="bi bi-info-circle"></i> Ver detalhes</Link>
             </div>
-            <h3 className="last-movies">Ultimos lançamentos</h3>
             <div className="movies-list">
                 {movies.map((movie) => {
                     return(
